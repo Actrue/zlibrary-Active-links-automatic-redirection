@@ -59,3 +59,11 @@ const domains = {
 ## API 端点
 
 - `GET /zlibrary`: 检查并返回可用的Z-Library域名
+
+## 已部署服务
+
+您可以直接访问以下URL来使用已部署的服务：
+
+- https://redirect.sereniblue.com/zlibrary
+
+该服务会自动重定向到当前可用的Z-Library域名。
