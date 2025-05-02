@@ -4,7 +4,13 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-05-02",
   "preview_urls": false,  //关闭预览url
-  "routes": [{"custom_domain": true,"pattern": "redirect.sereniblue.com"}] //你的自定义域名
+  "routes": [{"custom_domain": true,"pattern": "redirect.sereniblue.com"}], //自定义域名,
+  "kv_namespaces": [
+    {
+      "binding": "kv",
+      "id": "299aeb7678e94d03a2a2a21ecf6c3769"
+    }
+  ]
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
