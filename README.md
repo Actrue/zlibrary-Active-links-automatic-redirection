@@ -2,8 +2,8 @@
 
 ## 简介
 
-自动识别 zlibrary 有效地址，重定向至 zlibrary 有效地址。
-此项目可部署于 cloudflare
+自动识别 zlibrary 有效地址，重定向至 zlibrary 有效地址。  
+此项目可部署于 cloudflare  
 预览链接：[重定向至有效 zlibrary 地址](https://redirect.sereniblue.com/zlibrary)
 
 ## 使用方式
