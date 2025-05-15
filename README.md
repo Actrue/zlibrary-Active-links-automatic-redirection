@@ -1,69 +1,74 @@
-# Z-Library Cloudflare Worker
+# zlibrary自动重定向
 
-## 功能描述
+## 简介
 
-该API用于检查Z-Library的可用域名，并自动重定向到第一个可用的域名。它会并行检查多个预设域名，返回第一个可用的域名地址。如果所有域名都不可用，将返回503错误。
+自动识别 zlibrary 有效地址，重定向至 zlibrary 有效地址。
+此项目可部署于 cloudflare
+预览链接：[重定向至有效 zlibrary 地址](https://redirect.sereniblue.com/zlibrary)
 
-## 使用方法
+## 使用方式
 
-1. 安装依赖：
-
-```bash
-npm install
-```
-
-2. 本地运行：
+1. 复制源码
 
 ```bash
-npm run dev
+git clone https://github.com/Actrue/zlibrary-Active-links-automatic-redirection.git
 ```
 
-3. 部署到Cloudflare Workers：
+2. 安装依赖
 
 ```bash
-npm run deploy
+npm i
 ```
 
-## 类型生成
-
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+3. 绑定 cloudflare KV
 
 ```bash
-npm run cf-typegen
+npx wrangler kv namespace create zlibrary-url
 ```
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+获取到 kv 的 id
 
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
-
-## 域名列表
-
-当前支持的域名列表如下：
-
-```ts
-const domains = {
-  staticList: [
-    'https://z-library.rs',
-    'https://z-library.do',
-    'https://z-lib.gs',
-    'https://z-lib.gd',
-    'https://z-lib.do',
-    'https://z-lib.fm'
+```bash
+{
+  "kv_namespaces": [
+    {
+      "binding": "zlibrary_url",
+      "id": "cd8399aa28664877b0e42db47a07eff4"
+    }
   ]
 }
 ```
 
-## API 端点
+在 wrangler.jsonc 文件中，用新创建的 id 替换现有 id
 
-- `GET /zlibrary`: 检查并返回可用的Z-Library域名
+```jsonc
+  "kv_namespaces": [
+    {
+      "binding": "kv",//不要更换kv绑定名称
+      "id": "PUT-YOUR-KV-ID-IN-JSONC"
+    }
+  ]
+```
 
-## 已部署服务
+4. 发布到 cloudflare
 
-您可以直接访问以下URL来使用已部署的服务：
+```bash
+npx wrangler deploy
+```
 
-- https://redirect.sereniblue.com/zlibrary
+5. 访问 https://yourdomain/zlibrary 即可自动重定向至有效 zlibrary 地址。
 
-该服务会自动重定向到当前可用的Z-Library域名。
+## 进阶设置
+
+在 wrangler.jsonc 中自定义域名，添加以下行
+
+```jsonc
+"preview_urls": false,  //关闭预览url
+"routes": [{"custom_domain": true,"pattern": "redirect.sereniblue.com"}], //自定义域名,
+```
+
+## 技术栈
+
+- [cloudflare worker](https://www.cloudflare.com/zh-cn/)
+- [hono](https://hono.dev/)
+
