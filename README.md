@@ -56,7 +56,8 @@ npx wrangler kv namespace create zlibrary-url
 npx wrangler deploy
 ```
 
-5. 访问 https://yourdomain/zlibrary 即可自动重定向至有效 zlibrary 地址。
+5. 访问 https://yourdomain/zlibrary 即可自动重定向至有效 zlibrary 地址。  
+6. 访问 https://yourdomain/zlibrary-js 也可自动重定向至有效 zlibrary 地址。
 
 ## 进阶设置
 
