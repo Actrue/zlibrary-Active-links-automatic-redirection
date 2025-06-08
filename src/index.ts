@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { readmeContent } from './readmeContent'
 import { Context } from 'hono'
+import { proxy } from 'hono/proxy'
 type Bindings = {
 
   kv:KVNamespace
@@ -9,12 +10,16 @@ const app = new Hono<{ Bindings: Bindings }>()
 
 const domains = {
   staticList: [
-    'https://z-library.rs',
-    'https://z-library.do',
-    'https://z-lib.gs',
+    
+    
+  
     'https://z-lib.gd',
-    'https://z-lib.do',
-    'https://z-lib.fm'
+   
+    
+    'https://1lib.sk',
+    'https://z-lib.fm',
+    'https://z-lib.gl',
+    'https://z-lib.fo'
   ]
 }
 
@@ -66,13 +71,17 @@ app.get('/zlibrary-js', async (c) => {
   const jsCode = `
     (async function() {
       const domains = [
-        'https://z-library.rs',
-        'https://z-library.do',
-        'https://z-lib.gs',
-        'https://z-lib.gd',
-        'https://z-lib.do',
-        'https://z-lib.fm'
-      ];
+    
+    
+  
+    'https://z-lib.gd',
+   
+    
+    'https://1lib.sk',
+    'https://z-lib.fm',
+    'https://z-lib.gl',
+    'https://z-lib.fo'
+  ];
 
       const checkDomain = async (domain) => {
         try {
@@ -196,5 +205,41 @@ app.get('/zlibrary-js', async (c) => {
 ${jsCode}
 </script>`);
 })
+
+async function findAndCacheAvailableDomain(c: Context) {
+  const checks = domains.staticList.map(async domain => ({
+    domain,
+    available: await checkDomain(domain, c)
+  }));
+  
+  const results = await Promise.all(checks);
+  const availableDomain = results.find(r => r.available)?.domain;
+  
+  if (availableDomain) {
+    await c.env.kv.put('availableDomain', availableDomain, { expirationTtl: 86400 });
+    return availableDomain;
+  }
+  return null;
+}
+
+app.all('/proxy/*', async (c) => {
+  let cachedDomain = await c.env.kv.get('availableDomain');
+  
+  if (!cachedDomain) {
+    cachedDomain = await findAndCacheAvailableDomain(c);
+    if (!cachedDomain) return c.text('没有可用的域名', 503);
+  }
+  
+  return proxy(
+    `${cachedDomain}${c.req.path.replace('/proxy', '')}`,
+    {
+      headers: {
+        ...c.req.header(),
+        'X-Forwarded-For': c.req.header('cf-connecting-ip'),
+        'X-Forwarded-Host': new URL(cachedDomain).hostname
+      }
+    }
+  );
+});
 
 export default app
