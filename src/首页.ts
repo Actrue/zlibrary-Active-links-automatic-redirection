@@ -4,6 +4,7 @@ export const readmeContent = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/external-tal-revivo-tritone-tal-revivo/100/external-cloudflare-provides-content-delivery-network-services-ddos-mitigation-logo-tritone-tal-revivo.png">
     <title>Z-Library 智能重定向服务</title>
     <style>
         * {
