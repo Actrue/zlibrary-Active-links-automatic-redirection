@@ -4,7 +4,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-05-02",
   "preview_urls": false,  //关闭预览url
-  "routes": [{"custom_domain": true,"pattern": "redirect.sereniblue.com"}], //自定义域名,
+  "routes": [{"custom_domain": true,"pattern": "redirect.sereniblue.com"},
+  {"custom_domain": true,"pattern": "zb.sereniblue.com"}], //自定义域名,
   "kv_namespaces": [
     {
       "binding": "kv",//不要更换kv绑定名称
