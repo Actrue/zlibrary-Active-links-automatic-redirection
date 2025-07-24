@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { readmeContent } from './readmeContent'
+import { readmeContent } from './首页'
 
 type Bindings = {
 
