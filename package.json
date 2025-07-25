@@ -9,10 +9,10 @@
   "dependencies": {
     "hono": "^4.7.8",
     "marked": "^15.0.11",
-    "tsc": "^2.0.4",
-    "typescript": "^5.8.3"
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
+    "typescript": "^5.8.3",
     "wrangler": "^4.4.0"
   }
 }
