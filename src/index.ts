@@ -1,11 +1,12 @@
 import { Hono } from 'hono'
 import { readmeContent } from './首页'
-
+/*
 type Bindings = {
 
   kv:KVNamespace
 }
-const app = new Hono<{ Bindings: Bindings }>()
+  */
+const app = new Hono()
 
 const domains = {
   staticList: [
