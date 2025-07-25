@@ -14,10 +14,10 @@ export const readmeContent = `
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #171717;
+            background-color: #ffffff;
             min-height: 100vh;
         }
         
@@ -28,9 +28,8 @@ export const readmeContent = `
         }
         
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -58,30 +57,28 @@ export const readmeContent = `
         
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #171717;
             font-weight: 500;
             padding: 0.5rem 1rem;
-            border-radius: 8px;
+            border-radius: 4px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
         .nav-links a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            background-color: #f0f0f0;
+            color: #171717;
         }
         
         .nav-links a.primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background-color: #171717;
+            color: #ffffff;
         }
         
         .nav-links a.primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background-color: #000000;
+            color: #ffffff;
         }
         
         main {
@@ -95,14 +92,14 @@ export const readmeContent = `
         
         .hero h1 {
             font-size: 3rem;
-            color: white;
+            font-weight: bold;
+            color: #171717;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: #171717;
             max-width: 600px;
             margin: 0 auto 2rem;
         }
@@ -118,36 +115,28 @@ export const readmeContent = `
             display: inline-block;
             padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
+            border: 1px solid #171717;
             cursor: pointer;
             font-size: 1rem;
+            background-color: #ffffff;
+            color: #171717;
+        }
+        
+        .btn:hover {
+            background-color: #f0f0f0;
         }
         
         .btn-primary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
+            background-color: #171717;
+            color: #ffffff;
         }
         
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-        }
-        
-        .btn-secondary:hover {
-            background: #f8f9ff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: #000000;
+            color: #ffffff;
         }
         
         .features {
@@ -158,56 +147,57 @@ export const readmeContent = `
         }
         
         .feature-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: #ffffff;
             padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
+            border-color: #171717;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            color: white;
+            color: #171717;
         }
         
         .feature-card h3 {
-            color: #333;
+            color: #171717;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            font-weight: bold;
         }
         
         .feature-card p {
-            color: #666;
+            color: #171717;
             line-height: 1.6;
         }
         
         .domains-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: #ffffff;
             padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
             margin-bottom: 3rem;
         }
         
         .domains-section h2 {
             text-align: center;
-            color: #333;
+            color: #171717;
             margin-bottom: 2rem;
             font-size: 2rem;
+            font-weight: bold;
         }
         
         .domain-list {
@@ -217,18 +207,21 @@ export const readmeContent = `
         }
         
         .domain-item {
-            background: #f8f9ff;
+            background-color: #f0f0f0;
             padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            border-left: 4px solid #171717;
             font-family: 'Monaco', 'Menlo', monospace;
             font-size: 0.9rem;
+            color: #171717;
         }
         
         footer {
             text-align: center;
             padding: 2rem 0;
-            color: rgba(255, 255, 255, 0.8);
+            color: #171717;
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
         }
         
         @media (max-width: 768px) {

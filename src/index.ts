@@ -143,10 +143,10 @@ app.get('/zlibrary-js', async (c) => {
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
             min-height: 100vh;
-            color: #333;
+            color: #171717;
         }
         
         .container {
@@ -161,38 +161,37 @@ app.get('/zlibrary-js', async (c) => {
         }
         
         .header h1 {
-            color: white;
+            color: #171717;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
         }
         
         .header p {
-            color: rgba(255, 255, 255, 0.9);
+            color: #171717;
             font-size: 1.1rem;
         }
         
         .back-link {
             display: inline-block;
-            color: rgba(255, 255, 255, 0.8);
+            color: #171717;
             text-decoration: none;
             margin-bottom: 2rem;
             padding: 0.5rem 1rem;
-            border-radius: 8px;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
         
         .back-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            background: #f0f0f0;
+            color: #171717;
         }
         
         #status-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: #ffffff;
+            border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
         }
         
         #status-container h2 {
@@ -204,17 +203,16 @@ app.get('/zlibrary-js', async (c) => {
         
         .progress-bar {
             height: 12px;
-            background: #e9ecef;
+            background: #e0e0e0;
             border-radius: 6px;
             margin: 2rem 0;
             overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: #171717;
             transition: width 0.5s ease;
             border-radius: 6px;
         }
@@ -228,15 +226,16 @@ app.get('/zlibrary-js', async (c) => {
             display: flex;
             align-items: center;
             padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #171717;
             transition: all 0.3s ease;
         }
         
         .domain-status:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-color: #171717;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .status-dot {
@@ -244,7 +243,7 @@ app.get('/zlibrary-js', async (c) => {
             height: 16px;
             border-radius: 50%;
             margin-right: 1rem;
-            background: #6c757d;
+            background: #171717;
             animation: pulse 1.5s infinite;
             flex-shrink: 0;
         }
@@ -252,13 +251,13 @@ app.get('/zlibrary-js', async (c) => {
         .domain-name {
             font-family: 'Monaco', 'Menlo', monospace;
             font-weight: 600;
-            color: #495057;
+            color: #171717;
             flex: 1;
         }
         
         .status-text {
             font-weight: 500;
-            color: #6c757d;
+            color: #171717;
         }
         
         .success-message, .error-message {
@@ -270,13 +269,15 @@ app.get('/zlibrary-js', async (c) => {
         }
         
         .success-message {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            border: 2px solid #28a745;
+            background: #ffffff;
+            border: 1px solid #28a745;
+            border-radius: 8px;
         }
         
         .error-message {
-            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-            border: 2px solid #dc3545;
+            background: #ffffff;
+            border: 1px solid #dc3545;
+            border-radius: 8px;
         }
         
         .success-icon, .error-icon {
@@ -285,40 +286,42 @@ app.get('/zlibrary-js', async (c) => {
         }
         
         .success-message h3 {
-            color: #155724;
+            color: #171717;
             margin-bottom: 1rem;
             font-size: 1.5rem;
+            font-weight: bold;
         }
         
         .error-message h3 {
-            color: #721c24;
+            color: #171717;
             margin-bottom: 1rem;
             font-size: 1.5rem;
+            font-weight: bold;
         }
         
         .domain-url {
             font-family: 'Monaco', 'Menlo', monospace;
-            background: rgba(255, 255, 255, 0.8);
+            background: #f0f0f0;
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
             font-weight: 600;
-            color: #155724;
+            color: #171717;
             word-break: break-all;
         }
         
         .countdown {
             margin: 1rem 0;
             font-size: 1.1rem;
-            color: #155724;
+            color: #171717;
         }
         
         .btn-redirect, .btn-retry {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
+            background: #ffffff;
+            color: #171717;
+            border: 1px solid #171717;
             padding: 1rem 2rem;
-            border-radius: 12px;
+            border-radius: 4px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -327,17 +330,17 @@ app.get('/zlibrary-js', async (c) => {
         }
         
         .btn-redirect:hover, .btn-retry:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            background: #f0f0f0;
         }
         
         .btn-retry {
-            background: linear-gradient(135deg, #dc3545, #c82333);
+            background: #171717;
+            color: #ffffff;
         }
         
         .btn-retry:hover {
-            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
-        }
+            background: #000000;
+        
         
         @keyframes pulse {
             0% { opacity: 0.6; transform: scale(0.9); }
