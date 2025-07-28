@@ -6,7 +6,8 @@ export const jsCode = `
     'https://z-lib.fm',
     'https://z-lib.gl',
     'https://z-lib.fo',
-    'https://z-library.sk'
+    'https://z-library.sk',
+    'https://zh.z-library.ec'
   ];
 
       const checkDomain = async (domain) => {

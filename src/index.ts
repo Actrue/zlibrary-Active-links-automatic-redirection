@@ -16,7 +16,8 @@ const domains = {
     'https://z-lib.fm',
     'https://z-lib.gl',
     'https://z-lib.fo',
-    'https://z-library.sk'
+    'https://z-library.sk',
+    'https://zh.z-library.ec'
   ]
 }
 
