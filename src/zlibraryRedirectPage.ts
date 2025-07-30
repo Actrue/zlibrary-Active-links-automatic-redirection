@@ -40,9 +40,11 @@ export const jsCode = `
     // 用于控制重定向的标志
     let redirected = false;
 
-    const checks = domains.map(async (domain, index) => {
+    // 逐个检查域名，实现快速失败机制
+    for (let index = 0; index < domains.length; index++) {
+      const domain = domains[index];
       // 如果已经找到可用域名并开始重定向，则不再检查其他域名
-      if (redirected) return;
+      if (redirected) break;
 
       const statusElement = domainList.children[index];
       const dot = statusElement.querySelector('.status-dot');
@@ -52,7 +54,7 @@ export const jsCode = `
         const result = await checkDomain(domain);
         
         // 如果已经找到可用域名并开始重定向，则不再更新UI
-        if (redirected) return { domain, available: false };
+        if (redirected) break;
 
         dot.style.background = result ? '#4CAF50' : '#f44336';
         dot.style.animation = 'none';
@@ -76,7 +78,7 @@ export const jsCode = `
               <div class="countdown">
                 <span id="countdown-text">3秒后自动跳转...</span>
               </div>
-              <button onclick="window.location.href=\${firstAvailableDomain}'" class="btn-redirect">立即跳转</button>
+              <button onclick="window.location.href=\${firstAvailableDomain}" class="btn-redirect">立即跳转</button>
             </div>
           \`;
           
@@ -91,21 +93,17 @@ export const jsCode = `
               window.location.href = firstAvailableDomain;
             }
           }, 1000);
+          // 一旦找到可用域名并开始重定向，就跳出循环
+          break;
         }
-        
-        return { domain, available: result };
       } catch (e) {
         // 如果已经找到可用域名并开始重定向，则不再更新UI
-        if (redirected) return { domain, available: false };
+        if (redirected) break;
         
         dot.style.background = '#ff9800';
         text.textContent = '检查失败';
-        return { domain, available: false };
       }
-    });
-
-      // 等待所有检查完成，但不依赖其结果进行重定向
-      await Promise.allSettled(checks);
+    }
       
       // 如果所有域名都检查完毕仍未找到可用域名，则显示错误信息
       if (!redirected) {

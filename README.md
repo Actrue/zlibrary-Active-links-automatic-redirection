@@ -20,6 +20,8 @@ Z-Library 智能重定向服务是一个基于 Cloudflare Workers 的应用程�
 - https://z-lib.fm
 - https://z-lib.gl
 - https://z-lib.fo
+- https://z-library.sk
+- https://zh.z-library.ec
 
 ## 使用方式
 

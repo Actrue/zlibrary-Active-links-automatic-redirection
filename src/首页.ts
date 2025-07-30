@@ -293,6 +293,8 @@ export const readmeContent = `
                     <div class="domain-item">https://z-lib.fm</div>
                     <div class="domain-item">https://z-lib.gl</div>
                     <div class="domain-item">https://z-lib.fo</div>
+                    <div class="domain-item">https://z-library.sk</div>
+                    <div class="domain-item">https://zh.z-library.ec</div>
                 </div>
             </section>
         </div>
