@@ -7,7 +7,8 @@ export const jsCode = `
     'https://z-lib.gl',
     'https://z-lib.fo',
     'https://z-library.sk',
-    'https://zh.z-library.ec'
+    'https://zh.z-library.ec',
+    'https://actrue.fun'
   ];
 
       const checkDomain = async (domain) => {

@@ -295,6 +295,7 @@ export const readmeContent = `
                     <div class="domain-item">https://z-lib.fo</div>
                     <div class="domain-item">https://z-library.sk</div>
                     <div class="domain-item">https://zh.z-library.ec</div>
+                    <div class="domain-item">https://actrue.fun</div>
                 </div>
             </section>
         </div>

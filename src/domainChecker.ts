@@ -12,7 +12,8 @@ export class DomainChecker {
     'https://z-lib.gl',
     'https://z-lib.fo',
     'https://z-library.sk',
-    'https://zh.z-library.ec'
+    'https://zh.z-library.ec',
+    'https://actrue.fun'
   ];
 
   /**
